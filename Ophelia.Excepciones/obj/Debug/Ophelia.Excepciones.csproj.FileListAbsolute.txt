@@ -1,0 +1,6 @@
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.Excepciones\bin\Debug\Ophelia.Excepciones.dll
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.Excepciones\bin\Debug\Ophelia.Excepciones.pdb
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.Excepciones\obj\Debug\Ophelia.Excepciones.csprojAssemblyReference.cache
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.Excepciones\obj\Debug\Ophelia.Excepciones.csproj.CoreCompileInputs.cache
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.Excepciones\obj\Debug\Ophelia.Excepciones.dll
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.Excepciones\obj\Debug\Ophelia.Excepciones.pdb

@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OpheliaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="identificacion" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fechaNacimiento" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Factura" Relationship="Self.FK__Factura__idClien__145C0A3F" FromRole="Cliente" ToRole="Factura" />
+  </EntityType>
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idCliente" Type="Int32" Nullable="false" />
+    <Property Name="fechaFactura" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Cliente" Relationship="Self.FK__Factura__idClien__145C0A3F" FromRole="Factura" ToRole="Cliente" />
+    <NavigationProperty Name="Producto" Relationship="Self.Venta" FromRole="Factura" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Inventario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idProducto" Type="Int32" />
+    <Property Name="cantidad" Type="Int32" />
+    <NavigationProperty Name="Producto" Relationship="Self.FK__Inventari__idPro__1BFD2C07" FromRole="Inventario" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="referencia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="precio" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Inventario" Relationship="Self.FK__Inventari__idPro__1BFD2C07" FromRole="Producto" ToRole="Inventario" />
+    <NavigationProperty Name="Proveedor" Relationship="Self.InventarioProveedor" FromRole="Producto" ToRole="Proveedor" />
+    <NavigationProperty Name="Factura" Relationship="Self.Venta" FromRole="Producto" ToRole="Factura" />
+  </EntityType>
+  <EntityType Name="Proveedor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Producto" Relationship="Self.InventarioProveedor" FromRole="Proveedor" ToRole="Producto" />
+  </EntityType>
+  <Association Name="FK__Factura__idClien__145C0A3F">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Factura" Type="Self.Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="idCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Inventari__idPro__1BFD2C07">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="0..1" />
+    <End Role="Inventario" Type="Self.Inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Inventario">
+        <PropertyRef Name="idProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="InventarioProveedor">
+    <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="*" />
+    <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+  </Association>
+  <Association Name="Venta">
+    <End Role="Factura" Type="Self.Factura" Multiplicity="*" />
+    <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="OpheliaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" />
+    <EntitySet Name="Factura" EntityType="Self.Factura" />
+    <EntitySet Name="Inventario" EntityType="Self.Inventario" />
+    <EntitySet Name="Producto" EntityType="Self.Producto" />
+    <EntitySet Name="Proveedor" EntityType="Self.Proveedor" />
+    <AssociationSet Name="FK__Factura__idClien__145C0A3F" Association="Self.FK__Factura__idClien__145C0A3F">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Factura" EntitySet="Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Inventari__idPro__1BFD2C07" Association="Self.FK__Inventari__idPro__1BFD2C07">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="Inventario" EntitySet="Inventario" />
+    </AssociationSet>
+    <AssociationSet Name="InventarioProveedor" Association="Self.InventarioProveedor">
+      <End Role="Proveedor" EntitySet="Proveedor" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <AssociationSet Name="Venta" Association="Self.Venta">
+      <End Role="Factura" EntitySet="Factura" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

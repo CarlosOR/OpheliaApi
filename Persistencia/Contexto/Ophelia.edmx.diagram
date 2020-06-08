@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7804b2a754994c41bfb0c3c6f3771cd4" Name="Diagram1">
+        <EntityTypeShape EntityType="OpheliaModel.Cliente" Width="1.5" PointX="0.75" PointY="7.25" />
+        <EntityTypeShape EntityType="OpheliaModel.Factura" Width="1.5" PointX="3" PointY="7.375" />
+        <EntityTypeShape EntityType="OpheliaModel.Inventario" Width="1.5" PointX="5.25" PointY="5.125" />
+        <EntityTypeShape EntityType="OpheliaModel.Producto" Width="1.5" PointX="3" PointY="2.125" />
+        <EntityTypeShape EntityType="OpheliaModel.Proveedor" Width="1.5" PointX="0.75" PointY="2.5" />
+        <EntityTypeShape EntityType="OpheliaModel.Venta" Width="1.5" PointX="5.25" PointY="2.375" />
+        <AssociationConnector Association="OpheliaModel.FK__Factura__idClien__145C0A3F" />
+        <AssociationConnector Association="OpheliaModel.FK__Venta__idFactura__173876EA" />
+        <AssociationConnector Association="OpheliaModel.FK__Inventari__idPro__1CF15040" />
+        <AssociationConnector Association="OpheliaModel.FK__Venta__idProduct__182C9B23" />
+        <AssociationConnector Association="OpheliaModel.InventarioProveedor" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

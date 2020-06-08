@@ -1,0 +1,5 @@
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.DTO\bin\Debug\Ophelia.DTO.dll
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.DTO\bin\Debug\Ophelia.DTO.pdb
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.DTO\obj\Debug\Ophelia.DTO.csproj.CoreCompileInputs.cache
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.DTO\obj\Debug\Ophelia.DTO.dll
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.DTO\obj\Debug\Ophelia.DTO.pdb

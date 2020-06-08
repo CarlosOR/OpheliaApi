@@ -1,0 +1,5 @@
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.Excepciones\bin\Release\Ophelia.Excepciones.dll
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.Excepciones\bin\Release\Ophelia.Excepciones.pdb
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.Excepciones\obj\Release\Ophelia.Excepciones.csproj.CoreCompileInputs.cache
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.Excepciones\obj\Release\Ophelia.Excepciones.dll
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.Excepciones\obj\Release\Ophelia.Excepciones.pdb

@@ -1,0 +1,12 @@
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.DominioInterfaces\bin\Release\Ophelia.DominioInterfaces.dll
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.DominioInterfaces\bin\Release\Ophelia.DominioInterfaces.pdb
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.DominioInterfaces\bin\Release\Persistencia.dll
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.DominioInterfaces\bin\Release\EntityFramework.dll
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.DominioInterfaces\bin\Release\Persistencia.pdb
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.DominioInterfaces\bin\Release\Persistencia.dll.config
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.DominioInterfaces\bin\Release\EntityFramework.xml
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.DominioInterfaces\obj\Release\Ophelia.DominioInterfaces.csprojAssemblyReference.cache
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.DominioInterfaces\obj\Release\Ophelia.DominioInterfaces.csproj.CoreCompileInputs.cache
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.DominioInterfaces\obj\Release\Ophelia.DominioInterfaces.csproj.CopyComplete
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.DominioInterfaces\obj\Release\Ophelia.DominioInterfaces.dll
+C:\Users\Carlos.olarte\source\repos\Ophelia\Ophelia.DominioInterfaces\obj\Release\Ophelia.DominioInterfaces.pdb

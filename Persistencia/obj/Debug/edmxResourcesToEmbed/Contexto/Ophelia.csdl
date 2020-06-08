@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OpheliaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="OpheliaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cliente" EntityType="OpheliaModel.Cliente" />
+    <EntitySet Name="Factura" EntityType="OpheliaModel.Factura" />
+    <EntitySet Name="Inventario" EntityType="OpheliaModel.Inventario" />
+    <EntitySet Name="Producto" EntityType="OpheliaModel.Producto" />
+    <EntitySet Name="Proveedor" EntityType="OpheliaModel.Proveedor" />
+    <EntitySet Name="Venta" EntityType="OpheliaModel.Venta" />
+    <AssociationSet Name="FK__Factura__idClien__145C0A3F" Association="OpheliaModel.FK__Factura__idClien__145C0A3F">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Factura" EntitySet="Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Venta__idFactura__173876EA" Association="OpheliaModel.FK__Venta__idFactura__173876EA">
+      <End Role="Factura" EntitySet="Factura" />
+      <End Role="Venta" EntitySet="Venta" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Inventari__idPro__1CF15040" Association="OpheliaModel.FK__Inventari__idPro__1CF15040">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="Inventario" EntitySet="Inventario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Venta__idProduct__182C9B23" Association="OpheliaModel.FK__Venta__idProduct__182C9B23">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="Venta" EntitySet="Venta" />
+    </AssociationSet>
+    <AssociationSet Name="InventarioProveedor" Association="OpheliaModel.InventarioProveedor">
+      <End Role="Proveedor" EntitySet="Proveedor" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="identificacion" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fechaNacimiento" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Factura" Relationship="OpheliaModel.FK__Factura__idClien__145C0A3F" FromRole="Cliente" ToRole="Factura" />
+  </EntityType>
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idCliente" Type="Int32" Nullable="false" />
+    <Property Name="fechaFactura" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Cliente" Relationship="OpheliaModel.FK__Factura__idClien__145C0A3F" FromRole="Factura" ToRole="Cliente" />
+    <NavigationProperty Name="Venta" Relationship="OpheliaModel.FK__Venta__idFactura__173876EA" FromRole="Factura" ToRole="Venta" />
+  </EntityType>
+  <EntityType Name="Inventario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idProducto" Type="Int32" />
+    <Property Name="cantidad" Type="Int32" />
+    <NavigationProperty Name="Producto" Relationship="OpheliaModel.FK__Inventari__idPro__1CF15040" FromRole="Inventario" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="referencia" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="precio" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <NavigationProperty Name="Inventario" Relationship="OpheliaModel.FK__Inventari__idPro__1CF15040" FromRole="Producto" ToRole="Inventario" />
+    <NavigationProperty Name="Venta" Relationship="OpheliaModel.FK__Venta__idProduct__182C9B23" FromRole="Producto" ToRole="Venta" />
+    <NavigationProperty Name="Proveedor" Relationship="OpheliaModel.InventarioProveedor" FromRole="Producto" ToRole="Proveedor" />
+  </EntityType>
+  <EntityType Name="Proveedor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Producto" Relationship="OpheliaModel.InventarioProveedor" FromRole="Proveedor" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Venta">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idFactura" Type="Int32" Nullable="false" />
+    <Property Name="idProducto" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Factura" Relationship="OpheliaModel.FK__Venta__idFactura__173876EA" FromRole="Venta" ToRole="Factura" />
+    <NavigationProperty Name="Producto" Relationship="OpheliaModel.FK__Venta__idProduct__182C9B23" FromRole="Venta" ToRole="Producto" />
+  </EntityType>
+  <Association Name="FK__Factura__idClien__145C0A3F">
+    <End Type="OpheliaModel.Cliente" Role="Cliente" Multiplicity="1" />
+    <End Type="OpheliaModel.Factura" Role="Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="idCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Venta__idFactura__173876EA">
+    <End Type="OpheliaModel.Factura" Role="Factura" Multiplicity="1" />
+    <End Type="OpheliaModel.Venta" Role="Venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Factura">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Venta">
+        <PropertyRef Name="idFactura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Inventari__idPro__1CF15040">
+    <End Type="OpheliaModel.Producto" Role="Producto" Multiplicity="0..1" />
+    <End Type="OpheliaModel.Inventario" Role="Inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Inventario">
+        <PropertyRef Name="idProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Venta__idProduct__182C9B23">
+    <End Type="OpheliaModel.Producto" Role="Producto" Multiplicity="1" />
+    <End Type="OpheliaModel.Venta" Role="Venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Venta">
+        <PropertyRef Name="idProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="InventarioProveedor">
+    <End Type="OpheliaModel.Proveedor" Role="Proveedor" Multiplicity="*" />
+    <End Type="OpheliaModel.Producto" Role="Producto" Multiplicity="*" />
+  </Association>
+</Schema>

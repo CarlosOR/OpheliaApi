@@ -1,0 +1,12 @@
+C:\Users\Carlos.olarte\source\repos\Ophelia\Persistencia\bin\Debug\Persistencia.dll.config
+C:\Users\Carlos.olarte\source\repos\Ophelia\Persistencia\bin\Debug\Persistencia.dll
+C:\Users\Carlos.olarte\source\repos\Ophelia\Persistencia\bin\Debug\Persistencia.pdb
+C:\Users\Carlos.olarte\source\repos\Ophelia\Persistencia\bin\Debug\EntityFramework.dll
+C:\Users\Carlos.olarte\source\repos\Ophelia\Persistencia\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Carlos.olarte\source\repos\Ophelia\Persistencia\bin\Debug\EntityFramework.xml
+C:\Users\Carlos.olarte\source\repos\Ophelia\Persistencia\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Carlos.olarte\source\repos\Ophelia\Persistencia\obj\Debug\Persistencia.csprojAssemblyReference.cache
+C:\Users\Carlos.olarte\source\repos\Ophelia\Persistencia\obj\Debug\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\Carlos.olarte\source\repos\Ophelia\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
+C:\Users\Carlos.olarte\source\repos\Ophelia\Persistencia\obj\Debug\Persistencia.dll
+C:\Users\Carlos.olarte\source\repos\Ophelia\Persistencia\obj\Debug\Persistencia.pdb
